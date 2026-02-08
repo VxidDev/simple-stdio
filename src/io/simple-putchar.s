@@ -2,9 +2,9 @@ section .bss
   tmp resb 1
 
 section .text
-  global simplePutc
+  global simplePutchar
 
-simplePutc: ; rax = char ascii | rdi = const char c
+simplePutchar: ; rax = char ascii | rdi = const char c
   push rbp
   mov rbp, rsp
   sub rsp, 16

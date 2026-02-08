@@ -8,7 +8,7 @@
 
 /* output */
 int simplePuts(const char *s);
-int simplePutc(const char c);
+int simplePutchar(const char c);
 
 /* input */
 int simpleGetchar();

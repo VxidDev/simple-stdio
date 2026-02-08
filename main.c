@@ -10,17 +10,17 @@ void consumeRest() {
 int main(void) {
   simplePuts("Hello, World!");
 
-  simplePutc('A');
-  simplePutc('\n');
+  simplePutchar('A');
+  simplePutchar('\n');
 
   char *string = "Enter a character: \0";
   for (int i = 0; string[i] != '\0'; i++)
-    simplePutc(string[i]);
+    simplePutchar(string[i]);
 
   int c = simpleGetchar();
 
-  simplePutc(c);
-  simplePutc('\n');
+  simplePutchar(c);
+  simplePutchar('\n');
 
   consumeRest();
 
