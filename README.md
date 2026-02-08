@@ -8,6 +8,7 @@ Simple-Stdio is a recreation of selected functions from `<stdio.h>` library, wri
 | -------------------------------| --------------------- | ------------------------ | ------------ |
 | `int simplePuts(const char* s)`|print string to stdout.| `s` - null-terminated string | `0` on success.|
 | `int simplePutc(const char c)`| print char to stdout.| c - char                   | `c` ascii code on success.|
+| `int simpleGetchar()`        | get char from stdin     | void                   | ascii code on success |
 
 ## Tech Stack
 
