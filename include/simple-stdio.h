@@ -7,5 +7,6 @@
 #define SIMPLE_STDIO
 
 int simplePuts(const char *s);
+int simplePutc(const char c);
 
 #endif
