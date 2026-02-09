@@ -9,6 +9,7 @@ Simple-Stdio is a recreation of selected functions from `<stdio.h>` library, wri
 | `int simplePuts(const char* s)`|print string to stdout.| `s` - null-terminated string | `0` on success.|
 | `int simplePutchar(const char c)`| print char to stdout.| c - char                   | `c` ascii code on success.|
 | `int simpleGetchar()`        | get char from stdin     | void                   | ascii code on success |
+| `int simpleFopen(const char *filename , const char mode)` | open a file with mode of choice. (w , r, a) | `filename` - name of the file to open , `mode` - mode to open a file with. | File descriptor on success, `< 0` otherwise. |
 
 ## Tech Stack
 

@@ -24,5 +24,18 @@ int main(void) {
 
   consumeRest();
 
+  int file = simpleFopen("example.txt", 'w');
+
+  if (file < 0) {
+    simplePuts("Error occured while opening file.");
+    return 1;
+  }
+
+  simplePutc('H', file);
+  simpleFputc('i', file);
+  simplePutc('!', file);
+
+  simpleFclose(file);
+
   return 0;
 }
