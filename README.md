@@ -10,6 +10,9 @@ Simple-Stdio is a recreation of selected functions from `<stdio.h>` library, wri
 | `int simplePutchar(const char c)`| print char to stdout.| c - char                   | `c` ascii code on success.|
 | `int simpleGetchar()`        | get char from stdin     | void                   | ascii code on success |
 | `int simpleFopen(const char *filename , const char mode)` | open a file with mode of choice. (w , r, a) | `filename` - name of the file to open , `mode` - mode to open a file with. | File descriptor on success, `< 0` otherwise. |
+| `int simpleFclose(const int file)` | close file. | `file` file descriptor `simpleFopen` | `0` on success |
+| `int simpleFputc(const char c, const int source)` | print char to the given source. | `c` - char to print , `source` - 0/1 for stdin/stdout or file descriptor. | `c` ascii code on success. |
+| `int simplePutc(const char c, const int source)`| same as Fputc. | same as Fputc. | Same as Fputc. |
 
 ## Tech Stack
 
