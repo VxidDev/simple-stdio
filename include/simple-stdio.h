@@ -30,4 +30,6 @@ char *simpleFgets(char *str , const int n, const int stream);
 
 int simpleFputs(const char *str , const int stream);
 
+long simpleFtell(const int stream);
+
 #endif

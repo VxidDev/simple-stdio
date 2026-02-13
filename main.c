@@ -90,5 +90,23 @@ int main(void) {
 
   simpleFclose(file);
 
+  file = simpleFopen("example.txt", 'r');
+  if (file < 0) {
+    simplePuts("Failed to open file.");
+    return 1;
+  }
+
+  int currPos = simpleFtell(file);
+  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
+
+  c = simpleGetc(file);
+  simplePutc('\n', stdout);
+
+  currPos = simpleFtell(file);
+  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
+  simplePutc('\n', stdout);
+
+  simpleFclose(file);
+
   return 0;
 }
