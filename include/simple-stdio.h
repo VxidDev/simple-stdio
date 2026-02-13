@@ -23,4 +23,7 @@ int simpleFclose(const int file);
 int simpleFputc(const char c, const int stream);
 #define simplePutc(c, fd) simpleFputc(c, fd);
 
+int simpleFgetc(const int stream);
+#define simpleGetc(stream) simpleFgetc(stream);
+
 #endif

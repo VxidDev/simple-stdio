@@ -9,13 +9,12 @@ simpleFputc: ; rax = ascii code of char written to stream | rdi = const char c ,
   mov rbp, rsp
   sub rsp, 16
   
-  mov r8, rsi 
-  mov byte [rel char], dil ; load stream to r8
-
-  mov rax, 1 ; sys_write
-  lea rsi, [rel char] ; char to print 
-  mov rdi, r8 ; stream 
-  mov rdx, 1 ; bytes to write 
+  mov byte [rel char], dil ; Store char c into 'char' variable
+  
+  mov rax, 1           ; sys_write
+  mov rdi, rsi         ; Set rdi (file descriptor) to stream (from original rsi)
+  lea rsi, [rel char]  ; Set rsi (buffer) to address of 'char'
+  mov rdx, 1           ; Set rdx (count) to 1 
 
   syscall
 

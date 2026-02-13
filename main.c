@@ -37,5 +37,21 @@ int main(void) {
 
   simpleFclose(file);
 
+  file = simpleFopen("example.txt" , 'r');
+  
+  if (file < 0) {
+    simplePuts("Error occured while opening file.");
+    return 1;
+  }
+
+  c = simpleFgetc(file);
+
+  while (c != -1 && c != '\n') {
+    simplePutc(c, stdout);
+    c = simpleGetc(file);
+  }
+
+  simpleFclose(file);
+
   return 0;
 }

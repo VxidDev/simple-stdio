@@ -31,6 +31,7 @@ simpleFopen: ; rax = int(file descriptor) | rdi = const char* filename , rsi = c
 
   .setW:
     mov rsi, O_WRONLY | O_CREAT | O_TRUNC
+    mov rdx, 0644o
     jmp .syscall
 
   .setA:
@@ -41,7 +42,6 @@ simpleFopen: ; rax = int(file descriptor) | rdi = const char* filename , rsi = c
     mov rax, 2 ; open syscall
     ; rdi is already set
     ; rsi is also already set
-    mov rdx, 0644o
     syscall
 
     jmp .exit
