@@ -105,6 +105,19 @@ int main(void) {
   currPos = simpleFtell(file);
   simplePutc((char)(currPos + 48) , stdout); // print converted digit.
   simplePutc('\n', stdout);
+  
+  currPos = simpleFseek(file , 5 , 0);
+  if (currPos == -1) {
+    simplePuts("Failed to change file pos!");
+    simpleFclose(file);
+    return 1;
+  }
+
+  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
+  simplePutc('\n', stdout);
+
+  simplePutc(simpleGetc(file) , stdout);
+  simplePutc('\n' , stdout);
 
   simpleFclose(file);
 

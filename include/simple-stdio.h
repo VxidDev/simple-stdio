@@ -21,15 +21,16 @@ int simpleFopen(const char *filename, const char flag);
 int simpleFclose(const int file);
 
 int simpleFputc(const char c, const int stream);
-#define simplePutc(c, fd) simpleFputc(c, fd);
+#define simplePutc(c, fd) simpleFputc(c, fd)
 
 int simpleFgetc(const int stream);
-#define simpleGetc(stream) simpleFgetc(stream);
+#define simpleGetc(stream) simpleFgetc(stream)
 
 char *simpleFgets(char *str , const int n, const int stream);
 
 int simpleFputs(const char *str , const int stream);
 
 long simpleFtell(const int stream);
+int simpleFseek(const int stream , const long int offset , const int whence);
 
 #endif
