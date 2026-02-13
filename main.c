@@ -53,5 +53,29 @@ int main(void) {
 
   simpleFclose(file);
 
+  simplePutc('\n', 1);
+
+  char buff[16];
+
+  if (simpleFgets(buff, 16 , 0) != (void*)0) { // (void*)0 == NULL
+    for (int i = 0; buff[i]; i++) simplePutc(buff[i], stdout);
+  }
+
+  char FileBuff[8];
+  file = simpleFopen("example.txt" , 'r');
+  
+  if (file < 0) {
+    simplePuts("Failed to open file.");
+    return 1;
+  }
+
+  if (simpleFgets(FileBuff, 8, file) != (void*)0) {
+    for (int i = 0; FileBuff[i]; i++) simplePutc(FileBuff[i], stdout);
+  }
+
+  simpleFclose(file);
+
+  simplePutc('\n', stdout);
+
   return 0;
 }

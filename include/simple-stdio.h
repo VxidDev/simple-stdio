@@ -26,4 +26,6 @@ int simpleFputc(const char c, const int stream);
 int simpleFgetc(const int stream);
 #define simpleGetc(stream) simpleFgetc(stream);
 
+char *simpleFgets(char *str , const int n, const int stream);
+
 #endif
