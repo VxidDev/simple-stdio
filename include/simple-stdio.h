@@ -28,4 +28,6 @@ int simpleFgetc(const int stream);
 
 char *simpleFgets(char *str , const int n, const int stream);
 
+int simpleFputs(const char *str , const int stream);
+
 #endif

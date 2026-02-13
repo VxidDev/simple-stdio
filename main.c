@@ -77,5 +77,18 @@ int main(void) {
 
   simplePutc('\n', stdout);
 
+  file = simpleFopen("example.txt" , 'a');
+  
+  if (file < 0) {
+    simplePuts("Failed to open file.");
+    return 1;
+  }
+
+  if (simpleFputs(" Writing using simple-stdio!\n" , file) < 0) {
+    simplePuts("Failed to write to file!");
+  }
+
+  simpleFclose(file);
+
   return 0;
 }
