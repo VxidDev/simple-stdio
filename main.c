@@ -121,5 +121,7 @@ int main(void) {
 
   simpleFclose(file);
 
+  simpleRename("example.txt" , "example_r.txt");
+
   return 0;
 }

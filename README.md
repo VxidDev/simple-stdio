@@ -19,6 +19,8 @@ Simple-Stdio is a recreation of selected functions from `<stdio.h>` library, wri
 | `int simpleFputs(const char *str, const int stream)` | write string to stream. | `str` - null-terminated string, `stream` - file descriptor. | non-negative on success, `< 0` on error. |
 | `long simpleFtell(const int stream)` | get current file position. | `stream` - file descriptor. | current offset on success, `-1` on error. |
 | `int simpleFseek(const int stream, const long int offset, const int whence)` | set file position. | `stream` - file descriptor, `offset` - byte offset, `whence` - SEEK_SET/SEEK_CUR/SEEK_END. | `0` on success, `-1` on error. |
+| `int simpleRewind(const int stream)` | rewind file position to start. | `stream` - file descriptor | same as Fseek. |
+| `int simpleRename(const char *old , const char *new)` | rename file with name `old` to `new`. | `old , new` - null-terminated strings. | `0` on success. | 
 
 
 ## Tech Stack
