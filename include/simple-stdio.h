@@ -39,5 +39,6 @@ int simpleFseek(const int stream , const long int offset , const int whence);
 #define simpleRewind(file) simpleFseek(file, 0, SEEK_SET)
 
 int simpleRename(const char *old , const char *new);
+int simpleRemove(const char *filename);
 
 #endif

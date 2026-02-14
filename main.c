@@ -123,5 +123,9 @@ int main(void) {
 
   simpleRename("example.txt" , "example_r.txt");
 
+  if (simpleRemove("example_r.txt") != 0) {
+    simplePuts("Failed to remove file!");
+  }
+
   return 0;
 }

@@ -20,7 +20,8 @@ Simple-Stdio is a recreation of selected functions from `<stdio.h>` library, wri
 | `long simpleFtell(const int stream)` | get current file position. | `stream` - file descriptor. | current offset on success, `-1` on error. |
 | `int simpleFseek(const int stream, const long int offset, const int whence)` | set file position. | `stream` - file descriptor, `offset` - byte offset, `whence` - SEEK_SET/SEEK_CUR/SEEK_END. | `0` on success, `-1` on error. |
 | `int simpleRewind(const int stream)` | rewind file position to start. | `stream` - file descriptor | same as Fseek. |
-| `int simpleRename(const char *old , const char *new)` | rename file with name `old` to `new`. | `old , new` - null-terminated strings. | `0` on success. | 
+| `int simpleRename(const char *old , const char *new)` | rename file with name `old` to `new`. | `old , new` - null-terminated strings. | `0` on success. |
+| `int simpleRemove(const char *filename)` | remove a file. | `filename` - name of the file to delete | `0` on success |
 
 
 ## Tech Stack
