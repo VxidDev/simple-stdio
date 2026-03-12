@@ -47,7 +47,7 @@ int main(void) {
   c = simpleFgetc(file);
 
   while (c != -1 && c != '\n') {
-    simplePutc(c, stdout);
+    simplePutc(c, simpleStdout);
     c = simpleGetc(file);
   }
 
@@ -58,7 +58,7 @@ int main(void) {
   char buff[16];
 
   if (simpleFgets(buff, 16 , 0) != (void*)0) { // (void*)0 == NULL
-    for (int i = 0; buff[i]; i++) simplePutc(buff[i], stdout);
+    for (int i = 0; buff[i]; i++) simplePutc(buff[i], simpleStdout);
   }
 
   char FileBuff[8];
@@ -70,12 +70,12 @@ int main(void) {
   }
 
   if (simpleFgets(FileBuff, 8, file) != (void*)0) {
-    for (int i = 0; FileBuff[i]; i++) simplePutc(FileBuff[i], stdout);
+    for (int i = 0; FileBuff[i]; i++) simplePutc(FileBuff[i], simpleStdout);
   }
 
   simpleFclose(file);
 
-  simplePutc('\n', stdout);
+  simplePutc('\n', simpleStdout);
 
   file = simpleFopen("example.txt" , 'a');
   
@@ -97,14 +97,14 @@ int main(void) {
   }
 
   int currPos = simpleFtell(file);
-  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
+  simplePutc((char)(currPos + 48) , simpleStdout); // print converted digit.
 
   c = simpleGetc(file);
-  simplePutc('\n', stdout);
+  simplePutc('\n', simpleStdout);
 
   currPos = simpleFtell(file);
-  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
-  simplePutc('\n', stdout);
+  simplePutc((char)(currPos + 48) , simpleStdout); // print converted digit.
+  simplePutc('\n', simpleStdout);
   
   currPos = simpleFseek(file , 5 , 0);
   if (currPos == -1) {
@@ -113,11 +113,11 @@ int main(void) {
     return 1;
   }
 
-  simplePutc((char)(currPos + 48) , stdout); // print converted digit.
-  simplePutc('\n', stdout);
+  simplePutc((char)(currPos + 48) , simpleStdout); // print converted digit.
+  simplePutc('\n', simpleStdout);
 
-  simplePutc(simpleGetc(file) , stdout);
-  simplePutc('\n' , stdout);
+  simplePutc(simpleGetc(file) , simpleStdout);
+  simplePutc('\n' , simpleStdout);
 
   simpleFclose(file);
 
@@ -126,6 +126,11 @@ int main(void) {
   if (simpleRemove("example_r.txt") != 0) {
     simplePuts("Failed to remove file!");
   }
+
+  char buf[16]; 
+  simpleGetline(buf, 16, simpleStdin);
+
+  simplePuts(buf);
 
   return 0;
 }

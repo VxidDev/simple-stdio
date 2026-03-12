@@ -6,8 +6,9 @@
 #ifndef SIMPLE_STDIO
 #define SIMPLE_STDIO
 
-#define stdin 0
-#define stdout 1
+#define simpleStdin 0
+#define simpleStdout 1
+#define simpleStderr 2
 
 #define SEEK_SET 0
 #define SEEK_CUR 1
@@ -19,6 +20,7 @@ int simplePutchar(const char c);
 
 /* input */
 int simpleGetchar();
+long simpleGetline(char *buf, long max, int stream);
 
 /* File I/O */
 int simpleFopen(const char *filename, const char flag);
